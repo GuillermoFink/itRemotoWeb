@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 //ROUTER OUTLET
 import { RouterModule, Routes, Route } from '@angular/router';
@@ -73,6 +73,7 @@ const config: Routes = [
     BrowserModule,
     PrimengModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(config)
