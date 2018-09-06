@@ -16,6 +16,9 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { HomeComponent } from './componentes/home/home.component';
 import { MenuComponent } from './componentes/menu/menu.component';
+import { AltausuarioComponent } from './componentes/usuarios/altausuario/altausuario.component';
+import { VerusuariosComponent } from './componentes/usuarios/verusuarios/verusuarios.component';
+import { AuditoriausuariosComponent } from './componentes/usuarios/auditoriausuarios/auditoriausuarios.component';
 
 
 const config: Routes = [
@@ -38,7 +41,10 @@ const config: Routes = [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    MenuComponent
+    MenuComponent,
+    AltausuarioComponent,
+    VerusuariosComponent,
+    AuditoriausuariosComponent
   ],
   imports: [
     BrowserModule,
