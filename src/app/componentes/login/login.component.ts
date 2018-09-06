@@ -26,20 +26,27 @@ export class LoginComponent implements OnInit {
       .then(data => {
         if (data != "error") {
           localStorage.setItem('token', data);
-          console.log(data);
-          console.log("******************************");
+          //console.log(data);
+          //console.log("******************************");
           let payload = data.split('.')[1];
           let pay2 = payload.replace('-', '+').replace('_', '/');
           let datos = JSON.parse(atob(pay2));
-          console.log(datos);
-          console.log("******************************");
-          console.log(datos['data'][0]);
+          //console.log(datos);
+          //console.log("******************************");
+          //console.log(datos['data'][0]);
+
+          //CONSULTO SI LOS DATOS SON CORRECTOS Y SI SON CORRECTOS LO ASIGNO AL SERVICIO DEL USUARIO
           if (datos['data'][0]['nombre'] != null) {
             this.servicioUsuario.setApellidoUsuario(datos['data'][0]['apellido']);
             this.servicioUsuario.setNombreUsuario(datos['data'][0]['nombre']);
             this.servicioUsuario.setTipoUsuario(datos['data'][0]['tipo']);
             this.servicioUsuario.setMailUsuario(datos['data'][0]['mail']);
             this.servicioUsuario.setIdUsuario(datos['data'][0]['id']);
+            let dat = {idUsuario: this.servicioUsuario.getIdUsuario()};
+            //ACTUALIZO EL ULTIMO LOGUEO DEL USUARIO
+            this.mihttp.httpPostP('/updateLogin',dat)
+            .then(data => {console.log(data);});
+            //MENSAJE DE BIENVENIDA EN LOGUEO
             let timerInterval
             swal({
               title: 'Bienvenido '+this.servicioUsuario.getNombreUsuario(),
@@ -55,10 +62,8 @@ export class LoginComponent implements OnInit {
               }
             }).then((result) => {
               if (
-                // Read more about handling dismissals
                 result.dismiss === swal.DismissReason.timer
               ) {
-                console.log('I was closed by the timer')
               }
             })
             this.miRoot.navigate(['/home']);

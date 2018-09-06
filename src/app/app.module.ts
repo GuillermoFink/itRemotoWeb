@@ -19,6 +19,7 @@ import { MenuComponent } from './componentes/menu/menu.component';
 import { AltausuarioComponent } from './componentes/usuarios/altausuario/altausuario.component';
 import { VerusuariosComponent } from './componentes/usuarios/verusuarios/verusuarios.component';
 import { AuditoriausuariosComponent } from './componentes/usuarios/auditoriausuarios/auditoriausuarios.component';
+import { PerfilComponent } from './componentes/usuarios/perfil/perfil.component';
 
 
 const config: Routes = [
@@ -33,6 +34,27 @@ const config: Routes = [
   {
     path: 'home',
     component: HomeComponent
+  },
+  {
+    path: 'usuarios',
+    children: [
+      {
+        path: 'perfil',
+        component: PerfilComponent
+      },
+      {
+        path: 'verUsuarios',
+        component: VerusuariosComponent
+      },
+      {
+        path: 'auditoria',
+        component: AuditoriausuariosComponent
+      },
+      {
+        path: 'altausuario',
+        component: AltausuarioComponent
+      }
+    ]
   }
 ]
 
@@ -44,7 +66,8 @@ const config: Routes = [
     MenuComponent,
     AltausuarioComponent,
     VerusuariosComponent,
-    AuditoriausuariosComponent
+    AuditoriausuariosComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,
