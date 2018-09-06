@@ -15,6 +15,7 @@ import { Usuario } from './clases/usuario';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { HomeComponent } from './componentes/home/home.component';
+import { MenuComponent } from './componentes/menu/menu.component';
 
 
 const config: Routes = [
@@ -36,7 +37,8 @@ const config: Routes = [
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
