@@ -1,33 +1,62 @@
 <app-menu></app-menu>
-<p>
-  altausuario works!
-</p>
+
+
+
 <div class="ui-g">
   <div class="ui-g-3 ui-md-2 ui-lg-1"></div>
-  <div class="ui-g-6 -ui-md-8 ui-lg-10">
-    <form novalidate [formGroup]="frmControl" (ngSubmit)="onSubmit()">
-      
-      <strong class="first">Nombre</strong>
-      <div class="ui-inputgroup">
-        <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
-        <input type="text" formControlName="nombre" placeholder="Nombre">
-      </div>
+  <div class="ui-g-6 -ui-md-8 ui-lg-10" style="margin-top: 1%;">
+    <p-fieldset>
+      <p-header>ALTA DE USUARIO</p-header>
+      <form novalidate [formGroup]="frmControl" (ngSubmit)="onSubmit()">
 
+        <div class="ui-g-12">
+          <div class="ui-inputgroup">
+            <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+            <input type="text" pInputText formControlName="nombre" placeholder="Nombre" style="width:100%;" pTooltip="Nombre">
+          </div>
+        </div>
+        <div class="ui-g-12">
+          <div class="ui-inputgroup">
+            <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+            <input type="text" pInputText formControlName="apellido" placeholder="Apellido" style="width:100%;"
+              pTooltip="Apellido">
+          </div>
+        </div>
+        <div class="ui-g-12">
+          <div class="ui-inputgroup">
+            <span class="ui-inputgroup-addon"><i class="fa fa-at"></i></span>
+            <input type="text" pInputText formControlName="mail" placeholder="e-mail" style="width:100%;" pTooltip="Mail">
+          </div>
+        </div>
+        <div class="ui-g-12">
+          <div class="ui-inputgroup">
+            <span class="ui-inputgroup-addon"><i class="fa fa-lock"></i></span>
+            <input id="password" type="password" pInputText formControlName="password" placeholder="Password" style="width:100%;"
+              pTooltip="Password">
+          </div>
+        </div>
+        <div class="ui-g-12">
+          <div class="ui-inputgroup">
+            <span class="ui-inputgroup-addon"><i class="fa fa-lock"></i></span>
+            <input type="password" pInputText formControlName="passwordRepeat" placeholder="Repetir Password" style="width:100%;"
+              pTooltip="Repetir Password">
+          </div>
+        </div>
+        <div class="ui-g-12">
+          <div class="ui-g-6">
+            <!--<p-dropdown [options]="paises" [(ngModel)]="pais" [ngModelOptions]="{standalone: true}"></p-dropdown>-->
+            <p-dropdown [options]="paises" formControlName="pais"></p-dropdown>
+          </div>
+          <div class="ui-g-6">
+            <p-dropdown [options]="tipos" formControlName="tipo"></p-dropdown>
+          </div>
+        </div>
+        <div class="ui-g-12">
+          <button pButton type="submit" [disabled]="frmControl.invalid" style="width:100%;">Crear Usuario</button>
+        </div>
 
-
-
-      <input type="text" formControlName="apellido" placeholder="Apellido">
-
-
-
-      <input type="password" formControlName="password" placeholder="Password">
-
-
-
-      <input type="password" formControlName="passwordRepeat" placeholder="Password">
-
-      <button pButton type="submit" [disabled]="frmControl.invalid">Crear Usuario</button>
-    </form>
+      </form>
+    </p-fieldset>
   </div>
   <div class="ui-g-3 ui-md-2 ui-lg-1"></div>
 </div>

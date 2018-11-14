@@ -6,6 +6,7 @@ export class Usuario {
     mail: string;
     password: string;
     tipo: number;
+    pais: number;
     habilitado: number;
     foto: string;
     fecha_registro: Date;

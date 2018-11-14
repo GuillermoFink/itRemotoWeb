@@ -26,6 +26,7 @@ import {InputTextareaModule} from 'primeng/inputtextarea';
 import {DialogModule} from 'primeng/dialog';
 import {SliderModule} from 'primeng/slider';
 import {TooltipModule} from 'primeng/tooltip';
+import {FieldsetModule} from 'primeng/fieldset';
 
 @NgModule({
   imports: [
@@ -54,7 +55,8 @@ import {TooltipModule} from 'primeng/tooltip';
     InputTextareaModule,
     DialogModule,
     SliderModule,
-    TooltipModule
+    TooltipModule,
+    FieldsetModule
   ],
   exports: [
     CommonModule,
@@ -82,7 +84,8 @@ import {TooltipModule} from 'primeng/tooltip';
     InputTextareaModule,
     DialogModule,
     SliderModule,
-    TooltipModule
+    TooltipModule,
+    FieldsetModule
   ],
   declarations: []
 })
